@@ -70,10 +70,10 @@ class HelicopterController extends BaseController
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
         }
-        $helicopters ->name = $input['type'];
-        $helicopters ->detail = $input['name'];
-        $helicopters ->name = $input['speed'];
-        $helicopters ->detail = $input['color'];
+        $helicopters ->type = $input['type'];
+        $helicopters ->name = $input['name'];
+        $helicopters ->speed = $input['speed'];
+        $helicopters ->color = $input['color'];
         $helicopters ->save();
         return $this->sendResponse($helicopters ->toArray(), 'Helicopter updated successfully.');
     }
