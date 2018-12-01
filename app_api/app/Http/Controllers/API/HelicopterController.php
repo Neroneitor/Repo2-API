@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Helicopter;
 use Validator;
-class HelicoptersController extends BaseController
+class HelicopterController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -88,4 +88,13 @@ class HelicoptersController extends BaseController
         $helicopters ->delete();
         return $this->sendResponse($helicopters ->toArray(), 'Helicopter deleted successfully.');
     }
+    public function getGuzzleRequest()
+    {
+        $client = new \GuzzleHttp\Client();
+        $request = $client->get('https://jsonplaceholder.typicode.com/users');
+        $response = $request->getBody();
+        dd($response);
+    
+    }
+
 }

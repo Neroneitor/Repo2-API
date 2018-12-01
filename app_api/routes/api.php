@@ -21,6 +21,6 @@ Route::post('register', 'API\RegisterController@register');
   
 Route::middleware('auth:api')->group( function () {
 	Route::resource('products', 'API\ProductController');
-	Route::resource('helicopters', 'API\HelicoptersController');
-
+	Route::resource('helicopters', 'API\HelicopterController');
+	Route::get('/fac', '/API/HelicopterController@getGuzzleRequest');
 });
