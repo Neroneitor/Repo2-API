@@ -93,8 +93,20 @@ class HelicopterController extends BaseController
         $client = new \GuzzleHttp\Client();
         $request = $client->get('https://jsonplaceholder.typicode.com/users');
         $response = $request->getBody();
-        dd($response);
+       // dd($response);
+        echo gettype($response);
+        return ($response);
 
+    }
+    public function getUser()
+    {
+        $client = new \GuzzleHttp\Client();
+        $request = $client->get('https://randomuser.me/api/?results=25');
+        $response = $request->getBody();
+        //return $this->sendResponse($helicopters, 'List User');
+       echo gettype ($response);
+       // dd($response);
+        return ($response);
     }
 
 }
