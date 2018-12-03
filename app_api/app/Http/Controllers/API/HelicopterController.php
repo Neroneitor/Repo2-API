@@ -94,7 +94,7 @@ class HelicopterController extends BaseController
         $request = $client->get('https://jsonplaceholder.typicode.com/users');
         $response = $request->getBody();
         dd($response);
-    
+
     }
 
 }
