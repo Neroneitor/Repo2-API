@@ -30,6 +30,7 @@ class HelicopterController extends BaseController
             'name' => 'required',
             'speed' => 'required',
             'color' => 'required'
+            //dfgdflkflkfghfg
         ]);
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());       
