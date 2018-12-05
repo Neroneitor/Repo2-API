@@ -93,7 +93,7 @@ class HelicopterController extends BaseController
         $client = new \GuzzleHttp\Client();
         $request = $client->get('https://jsonplaceholder.typicode.com/users');
         $response = $request->getBody();
-       // dd($response);
+       //dd($response);
         echo gettype($response);
         return ($response);
 
@@ -103,10 +103,24 @@ class HelicopterController extends BaseController
         $client = new \GuzzleHttp\Client();
         $request = $client->get('https://randomuser.me/api/?results=25');
         $response = $request->getBody();
+        echo gettype ($response);
         //return $this->sendResponse($helicopters, 'List User');
-       echo gettype ($response);
-       // dd($response);
+        // dd($response);
         return ($response);
     }
 
+
+    public function getUserGit()
+    {
+    $client = new \GuzzleHttp\Client();
+    $res = $client->request('GET', 'https://api.github.com/user', 
+    ['auth' => ['Neroneitor', 'Neroneitor1234']]);
+    echo $res->getStatusCode();
+    // "200"
+    //echo $request->getHeader('content-type');
+    // 'application/json; charset=utf8'
+    echo $res->getBody();
+    // {"type":"User"...'
+
+    }
 }
